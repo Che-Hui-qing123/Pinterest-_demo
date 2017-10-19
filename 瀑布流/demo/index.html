@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>瀑布流</title>
+    <style>
+        .container-fluid {
+            /* 居中时需要注释掉这句话 */
+            /* padding: 20px; */
+        }
+
+        .box {
+            margin-bottom: 20px;
+            float: left;
+            width: 220px;
+        }
+
+        .box img {
+            max-width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div id="masonry" class="container-fluid">
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509010785&di=03ac00533b6a6beed6db481d0ce598c3&imgtype=jpg&er=1&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F1f178a82b9014a90e7eb9d17ac773912b21bee47.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066743&di=a9f4fdb11583e534b378f4298fb11a56&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3D38b7f8ed2c2eb938ec3872f6e052a903%2F21a4462309f79052f472bc320ff3d7ca7bcbd549.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066742&di=8c7aa3cf713e9b1b9183d82e495db4bf&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F0d338744ebf81a4cebca559dd12a6059242da6ee.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066742&di=de6f6d45fda5486d4df8b8930ea6c97e&imgtype=0&src=http%3A%2F%2Fimg2.niutuku.com%2Fdesk%2Fanime%2F4446%2F4446-8866.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066739&di=9d862b8f159d881478a91ba35cb30732&imgtype=0&src=http%3A%2F%2Fimg04.tooopen.com%2Fimages%2F20121026%2Ftooopen_201210261227413300.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509010785&di=03ac00533b6a6beed6db481d0ce598c3&imgtype=jpg&er=1&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F1f178a82b9014a90e7eb9d17ac773912b21bee47.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066743&di=a9f4fdb11583e534b378f4298fb11a56&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3D38b7f8ed2c2eb938ec3872f6e052a903%2F21a4462309f79052f472bc320ff3d7ca7bcbd549.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066742&di=8c7aa3cf713e9b1b9183d82e495db4bf&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F0d338744ebf81a4cebca559dd12a6059242da6ee.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066742&di=de6f6d45fda5486d4df8b8930ea6c97e&imgtype=0&src=http%3A%2F%2Fimg2.niutuku.com%2Fdesk%2Fanime%2F4446%2F4446-8866.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066739&di=9d862b8f159d881478a91ba35cb30732&imgtype=0&src=http%3A%2F%2Fimg04.tooopen.com%2Fimages%2F20121026%2Ftooopen_201210261227413300.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509010785&di=03ac00533b6a6beed6db481d0ce598c3&imgtype=jpg&er=1&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F1f178a82b9014a90e7eb9d17ac773912b21bee47.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066743&di=a9f4fdb11583e534b378f4298fb11a56&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3D38b7f8ed2c2eb938ec3872f6e052a903%2F21a4462309f79052f472bc320ff3d7ca7bcbd549.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066742&di=8c7aa3cf713e9b1b9183d82e495db4bf&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F0d338744ebf81a4cebca559dd12a6059242da6ee.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066742&di=de6f6d45fda5486d4df8b8930ea6c97e&imgtype=0&src=http%3A%2F%2Fimg2.niutuku.com%2Fdesk%2Fanime%2F4446%2F4446-8866.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066739&di=9d862b8f159d881478a91ba35cb30732&imgtype=0&src=http%3A%2F%2Fimg04.tooopen.com%2Fimages%2F20121026%2Ftooopen_201210261227413300.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509010785&di=03ac00533b6a6beed6db481d0ce598c3&imgtype=jpg&er=1&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F1f178a82b9014a90e7eb9d17ac773912b21bee47.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066743&di=a9f4fdb11583e534b378f4298fb11a56&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3D38b7f8ed2c2eb938ec3872f6e052a903%2F21a4462309f79052f472bc320ff3d7ca7bcbd549.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066742&di=8c7aa3cf713e9b1b9183d82e495db4bf&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F0d338744ebf81a4cebca559dd12a6059242da6ee.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066742&di=de6f6d45fda5486d4df8b8930ea6c97e&imgtype=0&src=http%3A%2F%2Fimg2.niutuku.com%2Fdesk%2Fanime%2F4446%2F4446-8866.jpg">
+        </div>
+        <div class="box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508416066739&di=9d862b8f159d881478a91ba35cb30732&imgtype=0&src=http%3A%2F%2Fimg04.tooopen.com%2Fimages%2F20121026%2Ftooopen_201210261227413300.jpg">
+        </div>
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://jq22.qiniudn.com/masonry-docs.min.js"></script>
+    <script>
+        // $(function () {
+        //     // 包含瀑布流的容器
+        //     var $container = $('#masonry');
+        //     // 瀑布流加载图片
+        //     $container.imagesLoaded(function () {
+        //         // 对瀑布流进行布局设置
+        //         $container.masonry({
+        //             // 做瀑布流的块
+        //             itemSelector: '.box',
+        //             // 内容块之间的距离
+        //             gutter: 20,
+        //             // 改变窗口宽度时是否有动画效果
+        //             isAnimated: true,
+        //         });
+        //     });
+        // });
+
+        $(function () {
+            var $objbox = $("#masonry");
+            var gutter = 25;
+            var centerFunc, $top0;
+            $objbox.imagesLoaded(function () {
+                $objbox.masonry({
+                    itemSelector: "#masonry > .box",
+                    gutter: gutter,
+                    isAnimated: true
+                });
+                centerFunc = function () {
+                    $top0 = $objbox.children("[style*='top: 0']");
+                    $objbox.css("left", ($objbox.width() - ($top0.width() * $top0.length + gutter * ($top0.length - 1))) / 2);
+                };
+                centerFunc();
+            });
+            var tur = true;
+            $(window).resize(function () {
+                if (tur) {
+                    setTimeout(function () {
+                        tur = true;
+                        centerFunc();
+                    }, 1000);
+                    tur = false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
